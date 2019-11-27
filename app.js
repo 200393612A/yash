@@ -12,7 +12,16 @@ var passport = require('passport');
 var Account = require('./model/account');
 var LocalStrategy = require('passport-local').Strategy;
 
-mongoose.connect('mongodb://localhost/assignment2');
+mongoose.connect(
+    'mongodb+srv://yash:Yashrn8800@cluster0-suvbo.mongodb.net/test?retryWrites=true&w=majority',
+
+
+    { useNewUrlParser: true, useUnifiedTopology: true }
+);
+
+var db = mongoose.connection;
+db.on('error', () => console.log('There was an error connecting'));
+db.once('open', () => console.log('We have connected to Mongo Atlas'));
 
 
 var routes = require('./routes/index');

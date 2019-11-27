@@ -1,0 +1,22 @@
+extends layout
+
+block content
+ include navbar
+ center
+   h3 Register
+   p
+     form(method='post' action='/register')
+      div
+          label Username
+          input(name='username' required placeholder='Username')
+      div
+          label Password
+         
+          input(name='password' required placeholder='password' type='password')
+      div
+        p
+          p
+            input(type='submit' value='Create Account')
+
+      h5 Click here if you already have account 
+       a(href="/login") Login

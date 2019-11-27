@@ -1,0 +1,23 @@
+extends layout
+block content
+  a(href='/advertisement' title='List Products') List Products
+  h1 Add A New Product
+  form(method='post' action='/advertisement/edit')
+    input(name='id' type='hidden' value=advertisement.id)
+
+    
+    div
+      label Title
+      input(name='title' required placeholder='Title' value=advertisement.title)
+    div
+      label Description
+      input(name='description' required placeholder='Description' value=advertisement.description)
+    div
+      label Price
+      input(name='price' required placeholder='Price' type="number" value=advertisement.price)
+
+    div
+      label location
+      input(name='location' required placeholder='location' value=advertisement.location)
+
+    input(type='submit' value='Update')

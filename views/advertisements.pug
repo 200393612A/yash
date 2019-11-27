@@ -1,0 +1,48 @@
+
+extends layout
+
+
+block content
+
+ center
+   h4 Click here view all advertisments 
+     a(href='/advertisement' title='List Products') List Advertisements
+
+   h4 Click here to add new advertisment 
+     a(href='/advertisement/add' title='Add') Add new advertisment
+
+ 
+
+ p
+
+
+
+
+
+
+
+ center
+   h1 Advertisement
+   h2 #{msg}
+   table
+      thead
+
+        
+          th Title
+          th Description
+          th Price
+          th Edit
+          th Delete
+      tbody
+          each advertisement in allAdvertisements
+              tr
+                
+                  td #{advertisement.title}
+                  td #{advertisement.description}
+                  td #{advertisement.price}
+                  td
+                      a(href="/advertisement/edit/"+advertisement._id)
+                          |Edit
+                  td
+                      a(href="/advertisement/delete/"+advertisement._id title="Delete" onclick="return confirm(\'Are you sure you want to delete this Advertisement ?\');")
+                          |Delete
